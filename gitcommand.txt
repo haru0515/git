@@ -1,0 +1,32 @@
+# ステージ追加
+git add　<ファイル名>
+
+# リポジトリ登録
+git commit
+# メッセージ付き
+git commit -m 'メッセージ'
+# エディター起動らしい
+git commit -v
+
+# ワークツリーとステージ、ステージとリポジトリの変更ファイル表示
+git status
+# ワークツリーとステージの差分
+git diff
+# ステージとリポジトリの差分
+git diff --staged
+
+# 変更履歴を確認
+git log
+# 一行で表示
+git log --oneline
+# ファイルの変更差分を表示
+git log -p index.html
+# 表示するコミット数を制限する（最近から）
+git log -n <コミット数>
+
+# ファイルを削除
+git rm <ファイル名>
+# ディレクトリ削除
+git rm -r <ディレクトリ名>
+# ファイルは残すけどgitから削除
+git rm --cached <ファイル名>
