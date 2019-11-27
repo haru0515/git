@@ -50,8 +50,11 @@ git mv <旧ファイル名> <新ファイル名>
 # リモートリポジトリを新規追加
 # リモート名は基本originにする
 # これはは慣用句のようなもの、cloneしたとき自動で割り当てられる
-git remote add <リモート名> <URL>
+# リモートリポジトリは複数登録することができるリモート名を変えればOK
+git remote add <リモート名> <URL or SSH>
 git remote add origin https://github.com/haru0515/git.git
+git remote add bkup git@github.com:haru0515/bkup.git
+
 # リモートを間違えた場合
 git remote rm <リモート名>
 # 現在のリモート確認
@@ -91,6 +94,8 @@ git checkout -- <ファイル名>
 git checkout -- <ディレクトリ名>
 # 全変更を取り消す
 git checkout -- .
+# ブランチを切り替える
+git checkout <ブランチ名>
 
 # ステージの情報を最新リポジトリに戻す
 git reset HEAD <ファイル名>
@@ -100,3 +105,41 @@ git reset HEAD .
 # 直前のコミットをやり直す
 # pushしたあとはだめだよ
 git commit --amend
+
+# リモートを表示する
+git remote
+# 対応するURLを表示
+git remote -v
+# リモートの詳細情報を表示する
+git remote show <リモート名>
+
+# リモートから情報を取得する fetch編
+# ローカルリポジトリ（リモートリポジトリ用のところ）に情報を格納
+# originの場合だと remotes/origin/master に格納される
+git fetch <リモート名>
+git fetch origin
+
+# ブランチの情報をワークツリーに取り込む
+git merge <リモート名/ブランチ名>
+git merge origin/master
+
+# リモートから情報を取得する pull編
+# イメージはfetchとmergeを同時に行っている
+# ただしmergeは現在のブランチにされることに注意
+git pull <リモート名> <ブランチ名>
+git pull origin master
+
+# リモートの変更
+git remote rename <旧リモート名> <新リモート名>
+git remote rename bkup bak
+
+# リモートの削除
+git remote rm <リモート名>
+git remote rm bak
+
+# ブランチを新規追加する
+# ブランチを作るだけで切り替わらないよ！
+git barnch <ブランチ名>
+git branch feature
+# ブランチをすべて表示(リモートブランチも含め)
+git branch -a
