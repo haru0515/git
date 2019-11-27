@@ -35,6 +35,8 @@ git log --oneline
 git log -p index.html
 # 表示するコミット数を制限する（最近から）
 git log -n <コミット数>
+# 一行でかつどのブランチがどのコミットを見ているか表示
+git log --oneline --decorate
 
 # ファイルを削除
 git rm <ファイル名>
@@ -96,6 +98,8 @@ git checkout -- <ディレクトリ名>
 git checkout -- .
 # ブランチを切り替える
 git checkout <ブランチ名>
+# ブランチを新規作成して切り替える
+git checkout -b <ブランチ名>
 
 # ステージの情報を最新リポジトリに戻す
 git reset HEAD <ファイル名>
@@ -139,6 +143,7 @@ git remote rm bak
 
 # ブランチを新規追加する
 # ブランチを作るだけで切り替わらないよ！
+# HEADは現在参照しているブランチのこと
 git barnch <ブランチ名>
 git branch feature
 # ブランチをすべて表示(リモートブランチも含め)
