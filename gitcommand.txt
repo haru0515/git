@@ -96,3 +96,7 @@ git checkout -- .
 git reset HEAD <ファイル名>
 git reset HEAD <ディレクトリ名>
 git reset HEAD .
+
+# 直前のコミットをやり直す
+# pushしたあとはだめだよ
+git commit --amend
