@@ -1,4 +1,3 @@
-# feature
 # git 初期化
 git init
 
@@ -127,6 +126,14 @@ git fetch origin
 # ブランチの情報をワークツリーに取り込む
 git merge <リモート名/ブランチ名>
 git merge origin/master
+
+# Fast Foward ブランチが枝分かれせず、そのコミットの先にある場合のマージ
+# git pullとかで自動で起きる
+
+# Auto Merge 枝分かれしているものをマージ（新しいコミットファイルができる）変更履歴の統合
+git merge <ブランチ名>
+
+# コンフリクト
 
 # リモートから情報を取得する pull編
 # イメージはfetchとmergeを同時に行っている
