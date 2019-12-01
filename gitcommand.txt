@@ -164,3 +164,16 @@ git branch -m <ブランチ名>
 git branch -d <ブランチ名>
 # ブランチを強制削除
 git branch -D <ブランチ名>
+# 他のブランチをもとにブランチを作成する
+# 下記ケースだと、リモートのmasterをもとにローカルにmasterを作成
+git branch master origin/master
+
+# リベース
+# ブランチの起点となるコミットを別のコミットに変更
+git rebase <ブランチ名>
+
+# リベースイメージ
+git checkout feature
+git rebase master
+git checkout master
+git merge feature
